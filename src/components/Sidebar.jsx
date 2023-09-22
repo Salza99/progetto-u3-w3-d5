@@ -2,8 +2,16 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../assets/Spotify_Logo.png";
 import { HouseDoorFill, BookFill } from "react-bootstrap-icons";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Sidebar = () => {
+  const [searchValue, setSearchValue] = useState("");
+  const dispatch = useDispatch();
+  const search = () => {
+    dispatch({ type: "SEARCH_VALUE", payload: searchValue });
+  };
+
   return (
     <Nav className="navbar col-md-12 d-none d-md-flex flex-column bg-black sidebar justify-content-between w-25 fixed-left">
       <Container className="h-100 align-content-between">
@@ -26,10 +34,25 @@ const Sidebar = () => {
           </Nav.Item>
 
           <div className="input-group mt-3 p-2">
-            <input className="form-control" type="text" placeholder="Search" />
-            <Button variant="outline-secondary" size="sm">
-              Go
-            </Button>
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Search"
+              onChange={(e) => {
+                setSearchValue(e.target.value);
+              }}
+            />
+            <Link to={"/"}>
+              <Button
+                variant="outline-secondary"
+                size="sm"
+                onClick={() => {
+                  search();
+                }}
+              >
+                Go
+              </Button>
+            </Link>
           </div>
         </div>
         <Nav.Item className="d-flex flex-column align-items-center w-100">

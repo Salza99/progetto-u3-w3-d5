@@ -4,6 +4,8 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 import TopBar from "./components/TopBar";
 import { Container } from "react-bootstrap";
+import AlbumPage from "./components/AlbumPage";
+import ArtistPage from "./components/ArtistPage";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
           <TopBar />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/album/:id" element={<AlbumPage />} />
+            <Route path="/artist/:id" element={<ArtistPage />} />
           </Routes>
         </Container>
       </BrowserRouter>
