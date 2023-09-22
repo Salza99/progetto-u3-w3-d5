@@ -12,7 +12,6 @@ body {
 
   align-items: flex-start;
   background-color: black;
-  z-index: 1200;
 }
 .signup-btn {
   background-color: white;
@@ -51,4 +50,21 @@ body {
 }
 .navbar-links:hover {
   color: white;
+}
+.progress {
+  color: white;
+  background-color: #414141;
+  height: 3px;
+}
+.playerControls .row {
+  justify-content: space-between;
+}
+
+.playerControls img {
+  width: 14px;
+  margin-top: 1rem;
+  filter: brightness(60%);
+}
+.navbar-link {
+  font-size: 0.75rem;
 }

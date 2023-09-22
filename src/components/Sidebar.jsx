@@ -1,4 +1,4 @@
-import { Button, Container, Nav } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import logo from "../assets/Spotify_Logo.png";
 import { HouseDoorFill, BookFill } from "react-bootstrap-icons";
@@ -9,7 +9,9 @@ const Sidebar = () => {
       <Container className="h-100 align-content-between">
         <div>
           <Link to={"/"}>
-            <img className="img-fluid mb-3 p-4" src={logo} alt="spotify-logo" />
+            <Navbar.Brand>
+              <img className="img-fluid mb-3 pt-3 px-3" src={logo} alt="spotify-logo" />
+            </Navbar.Brand>
           </Link>
 
           <Nav.Item>
@@ -30,7 +32,7 @@ const Sidebar = () => {
             </Button>
           </div>
         </div>
-        <Nav.Item className="d-flex flex-column align-items-center">
+        <Nav.Item className="d-flex flex-column align-items-center w-100">
           <Button className="signup-btn">Sign In</Button>
           <Button className="login-btn">Login</Button>
           <div className="d-flex w-100 align-items-center justify-content-center">
