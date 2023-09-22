@@ -32,7 +32,7 @@ const AlbumPage = () => {
           <img className="img-fluid w-100" src={album.cover} alt={album.title} />
         </Col>
       )}
-      {album?.tracks &&
+      {album &&
         album.tracks.data.map((track) => {
           return (
             <Col className="offset-md-7 d-flex justify-content-between" xs={12} md={5} lg={5}>
